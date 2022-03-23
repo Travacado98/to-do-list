@@ -1,0 +1,124 @@
+@import "normalize";
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap");
+
+body {
+  display: flex;
+  place-content: center;
+  background-color: #98b5fe;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  border-radius: 20px;
+  gap: 10px;
+  background-color: #344fa1;
+  // background-color: rgb(41, 47, 109);
+  width: 600px;
+  min-height: 700px;
+  box-shadow: 1px 0 8px;
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 0.5fr 0.75fr;
+  width: 100%;
+
+  div {
+    background-color: #041956;
+    border-radius: 20px 20px 0 0;
+  }
+  h1 {
+    margin: 0;
+    padding: 20px;
+    color: white;
+    background-color: #041956;
+    font-family: Oswald;
+  }
+}
+
+.entry {
+  width: 520px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  margin: 0px 20px;
+
+  input {
+    border-radius: 15px;
+    border: 0;
+    outline: 0;
+    height: 30px;
+    padding: 5px 10px;
+  }
+
+  button {
+    background-color: #041956;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    padding: none;
+    margin: none;
+    border: 0;
+    outline: 0;
+    color: rgb(189, 76, 189);
+  }
+}
+
+h3 {
+  text-align: left;
+  width: 100%;
+  padding-left: 40px;
+}
+
+// .to-do-list {
+// }
+
+.list-item {
+  background-color: #041956;
+  padding: 20px;
+  margin: 20px 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  color: rgb(228, 228, 228);
+
+  .delete {
+    background-color: #1b3ea5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    font-size: 15px;
+    padding: none;
+    margin: none;
+    border: 0;
+    outline: 0;
+    color: rgb(189, 76, 189);
+  }
+
+  &.done span {
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    text-decoration-color: rgb(189, 76, 189);
+    font-style: italic;
+    color: #fffa;
+  }
+}
+
+.tasks {
+  display: block;
+  width: 100%;
+}

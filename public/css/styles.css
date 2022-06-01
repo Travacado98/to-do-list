@@ -356,7 +356,7 @@ template {
     --color-primary: #597ff1;
     --color-primary-hover: #4a70df;
     --color-primary-text: #1d1e21;
-    --color-bg: #292c35;
+    --color-bg: #272a32;
     --color-text: #f0f4fe;
     --color-card: #2e313a;
     --color-card-header: #373a43;
@@ -378,6 +378,7 @@ body {
   background-color: var(--color-bg);
   font-family: Lato, Arial, sans-serif;
   padding: 40px;
+  min-height: 100vh;
 }
 @media (max-width: 600px) {
   body {

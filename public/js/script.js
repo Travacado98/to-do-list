@@ -1,8 +1,9 @@
+var localStorageKey = "to-do-list"
 var myToDoList = []
 getSavedListFromLocalStorage();
 
 function getSavedListFromLocalStorage() {
-    var savedList = localStorage.getItem("My Giga List");
+    var savedList = localStorage.getItem(localStorageKey);
     
     if (savedList !== null) {
         for (var item of JSON.parse(savedList)) {
@@ -13,13 +14,13 @@ function getSavedListFromLocalStorage() {
 }
 
 function saveList() {
-    localStorage.setItem("My Giga List",JSON.stringify(myToDoList));
+    localStorage.setItem(localStorageKey, JSON.stringify(myToDoList));
 }
 
 function deleteToDoList(event) {
     event.stopPropagation();
 
-    var deleteThis = this.parentElement
+    var deleteThis = this.parentElement;
 
     var position = [...deleteThis.parentElement.children].indexOf(deleteThis);
     myToDoList.splice(position,1);

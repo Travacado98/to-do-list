@@ -2,50 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico?">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <div class="list-container">
-        <div class="header">
-            <div>
-            </div>
-            <h1>Tasks</h1>
-        </div>
+  <main>
+    <header>
+      <h1>To-Do List</h1>
+    </header>
 
+    <section class="input-section">
+      <input type="text" id="addItemInput" onkeydown="checkEnterPressed(event)" placeholder="Add new item...">
+      <button onclick="addItem()">
+        <span class="material-icons">add</span>
+      </button>
+    </section>
 
-        <div class="entry">
-            <input type="text" id="addItemInput" onkeydown="checkEnterPressed(event)" placeholder="Add new item...">
-            <button onclick="addItem()">+</button>
-        </div>
+    <section class="tasks-section">
+      <div id="list"></div>
+    </section>
+  </main>
 
-        <div class="tasks">
-            <div id="to-do-list">
-                <div id="list"></div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="js/script.js" type="module"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

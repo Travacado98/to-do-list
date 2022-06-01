@@ -30,12 +30,15 @@ function deleteToDoList(event) {
 
 function toggleToDoList() {
     var position = [...this.parentElement.children].indexOf(this);
+    var iconElement = this.getElementsByClassName("material-icons")[0];
 
-    if (this.classList.contains("done")) {
-        this.classList.remove("done");
+    if (this.parentElement.classList.contains("done")) {
+        iconElement.innerHTML = "check_box_outline_blank";
+        this.parentElement.classList.remove("done");
         myToDoList[position].done = false;
     } else {
-        this.classList.add("done");
+        iconElement.innerHTML = "check_box";
+        this.parentElement.classList.add("done");
         myToDoList[position].done = true;
     }
     
@@ -52,23 +55,30 @@ function renderListItem(value, done) {
     var list = document.getElementById('list');
     var toDoItem = document.createElement('div');
     var deleteButton = document.createElement(`button`); 
+    var toggleButton = document.createElement(`button`);
+    var checkIcon = done ? "check_box" : "check_box_outline_blank"; 
 
     toDoItem.innerHTML = `<span>${value}</span>`;
-    toDoItem.className = `list-item`
+    toDoItem.className = `list-item`;
 
     if (done) {
         toDoItem.classList.add("done");
     }
 
-    deleteButton.innerHTML = "X"
-    deleteButton.className = "delete"
+    deleteButton.innerHTML = `<span class="material-icons">delete_outline</span>`;
+    deleteButton.className = "delete";
+
+    toggleButton.innerHTML = `<span class="material-icons">${checkIcon}</span>`;
+    toggleButton.className = "toggle";
+    
 
     // This adds click events to buttons
     
     deleteButton.addEventListener("click", deleteToDoList);
-    toDoItem.addEventListener("click", toggleToDoList);
+    toggleButton.addEventListener("click", toggleToDoList);
 
     toDoItem.appendChild(deleteButton);
+    toDoItem.prepend(toggleButton);
     list.appendChild(toDoItem);
 }
 
